@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Altura - Jquery</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+
+	
+	
+	
+	function tallest_toll(element_class){
+		
+		var get_class = "."+element_class ;
+		var hf = 0;
+		$(get_class).css("height", "auto");
+		$(get_class).each(function(){	
+			var height_class = $(this).height(); 
+			if (height_class > hf ){
+				hf = height_class;		
+			};	
+		});
+		$(get_class).css("height", hf);
+		
+	};
+	$(document).ready(function(){
+
+		
+
+			tallest_toll('altura_div');
+			tallest_toll('teste_2');
+
+
+		$(window).resize(function() {
+        	tallest_toll('altura_div');
+        
+    	});
+		
+		
+	});	
+	</script>
+	<style type="text/css">
+	.primeiro{
+		background-color: blue;
+		float:left;
+		width: 50%;
+		float: left;
+		height:auto;
+		overflow: visible;
+	}
+	.segundo{
+		background-color:green;
+		float:left;
+		width: 50%;
+		float:left;
+		height: auto;
+	}
+	.teste_2{
+		float:left;
+		width: 50%;
+		margin:0;
+	}
+	</style>
+</head>
+<body>
+<div class="primeiro altura_div">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
+<div class="segundo altura_div">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
+<p class="teste_2" style="min-height:50px; background-color:red;"></p>
+<div class="teste_2" style="background-color:black;"></div>
+<button type="button" class="clica">Clique</button>
+</body>
+</html>
