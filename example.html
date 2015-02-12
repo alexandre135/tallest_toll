@@ -3,25 +3,9 @@
 <head>
 	<title>Altura - Jquery</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="tallest_tool.js"></script>
 	<script>
 
-	
-	
-	
-	function tallest_toll(element_class){
-		
-		var get_class = "."+element_class ;
-		var hf = 0;
-		$(get_class).css("height", "auto");
-		$(get_class).each(function(){	
-			var height_class = $(this).height(); 
-			if (height_class > hf ){
-				hf = height_class;		
-			};	
-		});
-		$(get_class).css("height", hf);
-		
-	};
 	$(document).ready(function(){
 
 		
@@ -85,6 +69,5 @@
 </div>
 <p class="teste_2" style="min-height:50px; background-color:red;"></p>
 <div class="teste_2" style="background-color:black;"></div>
-<button type="button" class="clica">Clique</button>
 </body>
 </html>
